@@ -24,18 +24,19 @@ import {
 	SidebarRail,
 } from '@/components/ui/sidebar';
 import { signOut } from 'next-auth/react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navItems = [
 	{
 		title: 'Dashboard',
 		icon: Home,
-		url: '#',
-		isActive: true,
+		url: '/dashboard',
 	},
 	{
 		title: 'Invoices',
 		icon: FileText,
-		url: '#',
+		url: '/invoices',
 	},
 	{
 		title: 'Customers',
@@ -55,6 +56,8 @@ const navItems = [
 ];
 
 export default function AppSidebar() {
+	const pathname = usePathname();
+
 	return (
 		<Sidebar>
 			<SidebarHeader>
@@ -75,11 +78,14 @@ export default function AppSidebar() {
 						<SidebarMenu>
 							{navItems.map((item) => (
 								<SidebarMenuItem key={item.title}>
-									<SidebarMenuButton asChild isActive={item.isActive}>
-										<a href={item.url}>
+									<SidebarMenuButton
+										asChild
+										isActive={pathname.startsWith(item.url)}
+									>
+										<Link href={item.url}>
 											<item.icon className="size-4" />
 											<span>{item.title}</span>
-										</a>
+										</Link>
 									</SidebarMenuButton>
 								</SidebarMenuItem>
 							))}
