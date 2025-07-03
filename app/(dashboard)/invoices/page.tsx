@@ -11,6 +11,7 @@ import { Plus, FileText, DollarSign, Clock, CheckCircle } from 'lucide-react';
 import UserLayout from '@/components/layouts/user-layout';
 import Link from 'next/link';
 import { mockInvoices as invoices } from './[id]/page';
+import { SidebarTrigger } from '@/components/ui/sidebar';
 
 export default function InovoicesPage() {
 	const stats = {
@@ -23,9 +24,10 @@ export default function InovoicesPage() {
 
 	return (
 		<UserLayout>
-			<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sticky top-0 p-6 bg-background z-10 border-b">
-				<div>
-					<h1 className="text-2xl font-bold">Invoices</h1>
+			<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sticky top-0 px-4 h-16 bg-background z-10 border-b">
+				<div className="flex gap-2 items-center">
+					<SidebarTrigger className="-ml-1" />
+					<h1 className="text-lg font-semibold">Invoices</h1>
 				</div>
 				<Button className="w-full sm:w-auto" asChild>
 					<Link href="/invoices/create">

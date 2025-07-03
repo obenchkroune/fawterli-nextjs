@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Edit, Download, Send } from 'lucide-react';
 import type { Invoice } from '@/types/invoice';
+import { SidebarTrigger } from '../ui/sidebar';
 
 interface InvoicePreviewProps {
 	invoice: Invoice;
@@ -23,11 +24,10 @@ export function InvoicePreview({ invoice }: InvoicePreviewProps) {
 
 	return (
 		<>
-			<div className="flex items-center justify-between mb-6 sticky top-0 p-6 border-b bg-background z-10">
-				<div className="flex items-center space-x-4">
-					<div>
-						<h1 className="text-2xl font-bold">Invoice Preview</h1>
-					</div>
+			<div className="flex items-center justify-between mb-6 sticky top-0 px-4 h-16 border-b bg-background z-10">
+				<div className="flex gap-2 items-center">
+					<SidebarTrigger className="-ml-1" />
+					<h1 className="text-lg font-semibold">Invoice Preview</h1>
 				</div>
 				<div className="flex space-x-2">
 					<Button variant="outline">

@@ -24,6 +24,7 @@ import { CalendarIcon, Eye, Save } from 'lucide-react';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 import type { Invoice } from '@/types/invoice';
+import { SidebarTrigger } from '../ui/sidebar';
 
 interface InvoiceFormProps {
 	invoice?: Invoice | null;
@@ -63,10 +64,11 @@ export function InvoiceForm({ invoice }: InvoiceFormProps) {
 
 	return (
 		<>
-			<div className="flex items-center justify-between mb-6 sticky top-0 bg-background p-6 border-b z-10">
+			<div className="flex items-center justify-between mb-6 sticky top-0 bg-background px-4 h-16 border-b z-10">
 				<div className="flex items-center space-x-4">
-					<div>
-						<h1 className="text-2xl font-bold">
+					<div className="flex gap-2 items-center">
+						<SidebarTrigger className="-ml-1" />
+						<h1 className="text-lg font-semibold">
 							{invoice ? 'Edit Invoice' : 'Create Invoice'}
 						</h1>
 					</div>
