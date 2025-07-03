@@ -5,11 +5,10 @@ import InvoiceTable from '@/components/dashboard/invoice-table';
 import DashboardMetrics from '@/components/dashboard/dashboard-metrics';
 import RevenueChart from '@/components/dashboard/revenue-chart';
 import RecentActivity from '@/components/dashboard/recent-activity';
-import UserLayout from '@/components/layouts/user-layout';
 
 export default function Dashboard() {
 	return (
-		<UserLayout>
+		<main>
 			<header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
 				<SidebarTrigger className="-ml-1" />
 				<div className="flex items-center gap-2">
@@ -26,6 +25,6 @@ export default function Dashboard() {
 
 				<InvoiceTable />
 			</div>
-		</UserLayout>
+		</main>
 	);
 }

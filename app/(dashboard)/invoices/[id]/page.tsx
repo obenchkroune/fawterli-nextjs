@@ -1,5 +1,4 @@
 import { InvoicePreview } from '@/components/invoices/invoice-preview';
-import UserLayout from '@/components/layouts/user-layout';
 import type { Invoice } from '@/types/invoice';
 import { notFound } from 'next/navigation';
 
@@ -71,9 +70,5 @@ export default function ViewInvoicePage({ params }: Props) {
 		return notFound();
 	}
 
-	return (
-		<UserLayout>
-			<InvoicePreview invoice={invoice} />
-		</UserLayout>
-	);
+	return <InvoicePreview invoice={invoice} />;
 }

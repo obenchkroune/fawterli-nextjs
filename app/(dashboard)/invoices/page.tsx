@@ -8,7 +8,6 @@ import {
 } from '@/components/ui/card';
 import { InvoicesTable } from '@/components/invoices/invoices-table';
 import { Plus, FileText, DollarSign, Clock, CheckCircle } from 'lucide-react';
-import UserLayout from '@/components/layouts/user-layout';
 import Link from 'next/link';
 import { mockInvoices as invoices } from './[id]/page';
 import { SidebarTrigger } from '@/components/ui/sidebar';
@@ -23,7 +22,7 @@ export default function InovoicesPage() {
 	};
 
 	return (
-		<UserLayout>
+		<main>
 			<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sticky top-0 px-4 h-16 bg-background z-10 border-b">
 				<div className="flex gap-2 items-center">
 					<SidebarTrigger className="-ml-1" />
@@ -115,6 +114,6 @@ export default function InovoicesPage() {
 					</CardContent>
 				</Card>
 			</div>
-		</UserLayout>
+		</main>
 	);
 }
